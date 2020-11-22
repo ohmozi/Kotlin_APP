@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main03"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/x_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X: "
+        android:textSize="30dp"
+        android:textColor="#FF0000"
+        />
+    <TextView
+        android:id="@+id/y_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Y: "
+        android:textSize="30dp"
+        android:textColor="#3F51B5"
+        />
+    <TextView
+        android:id="@+id/z_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Z: "
+        android:textSize="30dp"
+        android:textColor="#FFEB3B"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next_recycle_view_btn"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리사이클러뷰 테스트"
+        android:textSize="40dp"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        />
+
+<!--    흔들리는건 오픈소스 사용-->
+    <ImageView
+        android:id="@+id/footprint_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/footprint"
+        android:padding="50dp"
+        />
+</LinearLayout>

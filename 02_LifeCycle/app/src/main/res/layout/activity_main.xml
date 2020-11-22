@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/splash_bg_gradient"
+    android:id="@+id/relative_layout"
+    >
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_free_icon_pawprint_3135512"
+        android:layout_centerInParent="true"
+        />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view"
+        android:layout_centerHorizontal="true"
+        android:text="라이프사이클 메소드"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
