@@ -12,6 +12,7 @@ class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
     private val usernameTextView = itemView.user_name_txt
     private val profileImageView = itemView.profile_img
+    private val userPhoneNumber = itemView.user_phone_number
 
     init {
         Log.d(TAG, "MyVeiwHolder - () called")
@@ -23,6 +24,7 @@ class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         // 텍스트뷰와 실제 텍스트 데이터를 묶는다.
         usernameTextView.text = myModel.name
+        userPhoneNumber.text = myModel.number
 
         // 이미지뷰와 실제 이미지 데이터를 묶는다. -> Glide라는 오픈소스 사용 (인터넷 url접속후 이미지 따옴)
         Glide
