@@ -7,15 +7,28 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.layout_recycler_item.view.*
 
 // 커스텀 뷰홀더
-class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+class MyViewHolder(itemView: View,
+                   recyclerviewInterface: MyRecyclerviewInterface): // 생성자
+                    RecyclerView.ViewHolder(itemView),      // 상속
+                    View.OnClickListener            // 인터페이스
+{
     val TAG: String = "로그"
 
     private val usernameTextView = itemView.user_name_txt
     private val profileImageView = itemView.profile_img
     private val userPhoneNumber = itemView.user_phone_number
 
+    private var myRecyclerviewInterface :MyRecyclerviewInterface? = null
+
+    // 기본 생성자
     init {
         Log.d(TAG, "MyVeiwHolder - () called")
+
+        // 클릭 리스너 설정
+        itemView.setOnClickListener(this)
+
+        // 인터페이스 연결
+        this.myRecyclerviewInterface = recyclerviewInterface
     }
 
     // 데이터와 뷰를 묶는다.
@@ -33,5 +46,10 @@ class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 //            .centerCrop()
             .placeholder(R.mipmap.ic_launcher)        // 가져온 이미지가 없다면 띄워줄 그림
             .into(profileImageView)
+    }
+
+    override fun onClick(v: View?) {
+        Log.d(TAG, "MyViewHolder - onClick() called")
+        this.myRecyclerviewInterface?.onItemClicked(adapterPosition)        // adapterPostion이 그냥 기능인가?
     }
 }

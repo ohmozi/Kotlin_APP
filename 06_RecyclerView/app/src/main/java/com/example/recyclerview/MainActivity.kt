@@ -3,10 +3,11 @@ package com.example.recyclerview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MyRecyclerviewInterface {
     val TAG: String = "로그"
 
     // 데이터를 담을 그릇 즉 배열
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // 어댑터 인스턴스 생성
-        myRecyclerAdapter = MyRecyclerAdapter()
+        myRecyclerAdapter = MyRecyclerAdapter(this)
 
         myRecyclerAdapter.submitList(this.modelList)
 
@@ -42,5 +43,27 @@ class MainActivity : AppCompatActivity() {
             // 어댑터 장착
             adapter = myRecyclerAdapter
         }
+    }
+    // 클릭리스너 설정 : 정대리 #3-커스텀 어답터, 클릭리스너 설정 30:04 설명
+    // MyViewHolder에서 onClicked됐다는걸 Main이 아는 과정을 이해하기
+    // 1. "MyViewHolder - onClick() called"
+    // 2. "MainActivity - onItemClicked() called"
+    override fun onItemClicked(position: Int) {
+        Log.d(TAG, "MainActivity - onItemClicked() called / position: $position")
+
+        var name: String? = null
+        // 값이 비어있으면 ""를 넣는다
+        // unwrapping
+        val title: String = this.modelList[position].name ?: ""
+
+        // 얼럿다이얼로그
+        AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage("$title 와 함께하는 빡코딩! :")
+                .setPositiveButton("오케이"){ dialog, id->
+                    Log.d(TAG, "MainActivity - 다이얼로그 확인 버튼 클릭했음")
+
+                }
+                .show()
     }
 }
