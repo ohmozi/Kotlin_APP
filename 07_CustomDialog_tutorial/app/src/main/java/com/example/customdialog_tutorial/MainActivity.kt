@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), CustomDialogInterface {       // imple
     fun onDialogClicked(view: View){
         Log.d(TAG, "MainActivity - onDialogBtnClicked() called")
 
-        val customDialog = CustomDialog(this)
+        val customDialog = CustomDialog(this, this)     // 생성자 쪽 확인
 
         customDialog.show()
     }
