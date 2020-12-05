@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 
-// 코틀린 싱글톤 및 매개변수를 사용한 싱글톤 
+// 코틀린 싱글톤 및 매개변수를 사용한 싱글톤
 class MainActivity : AppCompatActivity() {
 
     val TAG: String = "로그"
