@@ -15,7 +15,7 @@ class HomeFragment: Fragment() {
         const val TAG : String = "로그"
 
         // 홈 프레그먼트의 메모리에 올라간 애를 가져온다.
-        fun newInsatnace() : HomeFragment{
+        fun newInstance() : HomeFragment{
             return HomeFragment()
         }
     }
