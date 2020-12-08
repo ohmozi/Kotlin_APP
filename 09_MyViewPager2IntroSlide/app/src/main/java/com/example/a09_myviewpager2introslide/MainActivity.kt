@@ -3,6 +3,8 @@ package com.example.a09_myviewpager2introslide
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.viewpager2.widget.ViewPager2
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -33,5 +35,15 @@ class MainActivity : AppCompatActivity() {
 
         // 어답터 인스턴스 생성
         myIntroPagerRecyclerAdapter = MyIntroPagerRecyclerAdapter(pageItemList)
+
+        my_intro_view_pager.apply{
+            adapter = myIntroPagerRecyclerAdapter
+            orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        }
+
+        // 이 두줄을 계속 하기 귀찮으니까 apply에서 바로 설정
+//        my_intro_view_pager.adapter = myIntroPagerRecyclerAdapter
+//        my_intro_view_pager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
     }
 }
