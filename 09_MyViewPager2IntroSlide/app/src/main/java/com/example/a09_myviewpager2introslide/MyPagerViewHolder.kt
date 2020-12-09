@@ -1,5 +1,6 @@
 package com.example.a09_myviewpager2introslide
 
+import android.graphics.Color
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -19,6 +20,10 @@ class MyPagerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         itemImageLeft.setImageResource(pageItem.imageSrcLeft)
         itemImageRight.setImageResource(pageItem.imageSrcRight)
         itemContent.text = pageItem.content
+
+        if(pageItem.bgColor != R.color.colorWhite){
+            itemContent.setTextColor(Color.WHITE)
+        }
 
         itemBackground.setBackgroundResource(pageItem.bgColor)
     }

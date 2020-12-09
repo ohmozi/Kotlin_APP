@@ -3,6 +3,7 @@ package com.example.a09_myviewpager2introslide
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.collections.ArrayList
@@ -23,6 +24,24 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, "MainActivity - onCreate() called")
 
+        // Hide the status bar.
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        // Remember that you should never show the action bar if the
+        // status bar is hidden, so hide that too if necessary.
+        actionBar?.hide()
+
+        // 화살표 누르면 처리
+        previous_btn.setOnClickListener{
+            Log.d(TAG, "MainActivity - 이전 버튼 클릭")
+
+            my_intro_view_pager.currentItem = my_intro_view_pager.currentItem - 1
+        }
+        next_btn.setOnClickListener {
+            Log.d(TAG, "MainActivity - 다음 버튼 클릭")
+
+            my_intro_view_pager.currentItem = my_intro_view_pager.currentItem + 1
+        }
+
         // 데이터 배열을 준비
         pageItemList.add(PageItem(R.color.colorOrange
             , R.drawable.ic_pager_item_1, R.drawable.ic_pager_item_2, "안녕하세요!\n 개발하는 오모지입니다~"))
@@ -39,6 +58,14 @@ class MainActivity : AppCompatActivity() {
         my_intro_view_pager.apply{
             adapter = myIntroPagerRecyclerAdapter
             orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
+            // 닷 인디케이터 오픈소스 적용
+            dots_indicator.setViewPager2(this)
+//            val dotsIndicator = findViewById<WormDotsIndicator>(R.id.dots_indicator)
+//            val viewPager = findViewById<ViewPager>(R.id.view_pager)
+//            val adapter = ViewPagerAdapter()
+//            viewPager.adapter = adapter
+//            dotsIndicator.setViewPager(viewPager)
         }
 
         // 이 두줄을 계속 하기 귀찮으니까 apply에서 바로 설정
