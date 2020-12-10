@@ -22,6 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
             >
             <RadioButton
                 android:id="@+id/r_btn1"
@@ -36,4 +37,26 @@
                 android:layout_height="wrap_content"
                 />
         </RadioGroup>
+
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_bar_stroke"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:iconifiedByDefault="true"
+        android:maxWidth="30dp"
+
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="검색"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:background="@drawable/rounded_corner"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        />
 </LinearLayout>
