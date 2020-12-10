@@ -46,6 +46,8 @@ dependencies {
 
     // viewpager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+    // viewpager2 circular
+//    implementation 'androidx.viewpager2:viewpager2:1.0.0-beta05'
 
     // animation indicator open source
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
