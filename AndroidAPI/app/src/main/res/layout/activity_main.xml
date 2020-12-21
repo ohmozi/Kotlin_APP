@@ -31,7 +31,7 @@
             >
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/r_btn1"
-                android:text="사진검색"
+                android:text="사진 검색"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
@@ -39,7 +39,7 @@
                 />
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/r_btn2"
-                android:text="사용자검색"
+                android:text="사용자 검색"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="false"
@@ -49,6 +49,7 @@
             android:id="@+id/search_term_text_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:focusedByDefault="true"
             app:shapeAppearance="@style/ShapeAppearance.MaterialComponents.MediumComponent"
             app:boxStrokeColor="#DD5987"
             app:boxStrokeWidth="2dp"
@@ -56,8 +57,11 @@
             app:counterEnabled="true"
             app:counterMaxLength="12"
             app:startIconDrawable="@drawable/ic_baseline_photo_library_24"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="사진검색"
+            app:hintTextColor="#DD5987"
+            app:endIconMode="clear_text"
+
             > 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/search_term_edit_text"
@@ -66,28 +70,14 @@
                 android:maxLength="12"
                 android:inputType="text"
                 android:layout_marginBottom="5dp"
+
                 />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <androidx.appcompat.widget.SearchView
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/search_bar_stroke"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:iconifiedByDefault="true"
-            android:maxWidth="30dp"
-
-            />
-        <androidx.appcompat.widget.AppCompatButton
+<!--        xml이 복잡해지면 include로 해결하기-->
+        <include
+            layout = "@layout/layout_button_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="검색"
-            android:textSize="20sp"
-            android:textColor="#fff"
-            android:background="@drawable/rounded_corner"
-            android:visibility="invisible"
             android:layout_marginTop="20dp"
             />
     </LinearLayout>
