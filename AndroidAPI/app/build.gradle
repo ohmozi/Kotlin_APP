@@ -46,4 +46,13 @@ dependencies {
 
     // material theme
     implementation 'com.google.android.material:material:1.1.0'
+
+    // Retrofit
+    def retrofit_version = "2.9.0"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    // Gson 컨버터
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    // Retrofit 로깅 인터셉터
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+
 }
